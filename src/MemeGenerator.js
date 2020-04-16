@@ -6,11 +6,12 @@ class MemeGenerator extends React.Component {
     this.state = {
     topText: "",
     bottomText: '',
-    randomImg: '',
+    randomImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRTK00zuHEcRKikULPXvjUj6kOb7m_u0Uon_A_GhaQkCGSTCo3K&usqp=CAU',
     allMemeImgs: []
 
     }
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     componentDidMount() {
@@ -31,10 +32,17 @@ class MemeGenerator extends React.Component {
 
     }
 
+    handleSubmit(event) {
+        event.preventDefault()
+        const randNum = Math.floor(Math.random() * this.state.allMemeImgs.length)
+        const randMemeImg = this.state.allMemeImgs[randNum].url
+        this.setState({randomImg: randMemeImg})
+    }
+
     render() {
         return (
             <div>
-            <form>
+            <form onSubmit={this.handleSubmit}> 
                 <input 
                 name='topText'
                 type='text'
@@ -53,6 +61,12 @@ class MemeGenerator extends React.Component {
                 
                 <button>Gen</button>
             </form>
+
+            <div>
+                <img src={this.state.randomImg} alt='' />
+                <h2>{this.state.topText}</h2>
+                <h2>{this.state.bottomText}</h2>
+            </div>
             </div>
         )
     }
