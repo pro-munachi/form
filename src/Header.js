@@ -10,7 +10,7 @@ const Memeheader = styled.div `
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
-    border-radius: 1em;
+
     margin-top: 0.5em;
   `
   const Logo = styled.img `

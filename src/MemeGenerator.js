@@ -1,12 +1,19 @@
 import React from 'react'
 import styled from  'styled-components'
 
+const Wrapper = styled.div `
+margin: 0;
+background: #7FDBFF;
+`
+
 const Para = styled.input `
 
   width: 30%;
   padding: 15px 22px;
   margin: 15px 20px;
   box-sizing: border-box;
+  top: 0;
+  bottom: 0;
 
 
 `
@@ -18,6 +25,21 @@ const Submit = styled.button `
   color: white;
   background: green;
 
+`
+const Pic = styled.img `
+width: 50%;
+`
+const Myhead = styled.h2 `
+position: relative;
+width: 90%;
+text-align: center;
+left: 50mm;
+transform: translateX( -50%);
+margin: 15px 0;
+padding: 0 5px;
+font-size: 2em;
+text-transform: uppercase;
+letter-spacing: 1px;
 `
 
 class MemeGenerator extends React.Component {
@@ -61,7 +83,7 @@ class MemeGenerator extends React.Component {
 
     render() {
         return (
-            <div >
+            <Wrapper >
             <form onSubmit={this.handleSubmit} className='memes'> 
                 <Para 
                 name='topText'
@@ -83,12 +105,12 @@ class MemeGenerator extends React.Component {
             </form>
 
             <div>
-                <img src={this.state.randomImg} alt='' />
-                <h2>{this.state.topText}</h2>
-                <h2>{this.state.bottomText}</h2>
+                <Pic src={this.state.randomImg} alt='' />
+                <Myhead>{this.state.topText}</Myhead>
+                <Myhead>{this.state.bottomText}</Myhead>
                 
             </div>
-            </div>
+            </Wrapper>
         )
     }
 }
