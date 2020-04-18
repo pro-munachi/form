@@ -1,9 +1,23 @@
 import React from 'react'
 import styled from  'styled-components'
 
-const Para = styled.div `
-color: pink;
-font-size: 30px;
+const Para = styled.input `
+
+  width: 30%;
+  padding: 15px 22px;
+  margin: 15px 20px;
+  box-sizing: border-box;
+
+
+`
+const Submit = styled.button `
+
+  width: 12%;
+  padding: 15px 22px;
+  border-radius: 1em;
+  color: white;
+  background: green;
+
 `
 
 class MemeGenerator extends React.Component {
@@ -49,7 +63,7 @@ class MemeGenerator extends React.Component {
         return (
             <div >
             <form onSubmit={this.handleSubmit} className='memes'> 
-                <input 
+                <Para 
                 name='topText'
                 type='text'
                 value={this.state.topText}
@@ -57,7 +71,7 @@ class MemeGenerator extends React.Component {
                 onChange={this.handleChange}
                 />
 
-                <input 
+                <Para 
                 name='bottomText'
                 type='text'
                 value={this.state.bottomText}
@@ -65,14 +79,14 @@ class MemeGenerator extends React.Component {
                 onChange={this.handleChange}
                 />
                 
-                <button className='but'>Gen</button>
+                <Submit>Sub</Submit>
             </form>
 
             <div>
                 <img src={this.state.randomImg} alt='' />
                 <h2>{this.state.topText}</h2>
                 <h2>{this.state.bottomText}</h2>
-                <Para>love</Para>
+                
             </div>
             </div>
         )
