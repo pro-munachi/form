@@ -1,4 +1,10 @@
 import React from 'react'
+import styled from  'styled-components'
+
+const Para = styled.div `
+color: pink;
+font-size: 30px;
+`
 
 class MemeGenerator extends React.Component {
     constructor() {
@@ -66,6 +72,7 @@ class MemeGenerator extends React.Component {
                 <img src={this.state.randomImg} alt='' />
                 <h2>{this.state.topText}</h2>
                 <h2>{this.state.bottomText}</h2>
+                <Para>love</Para>
             </div>
             </div>
         )
