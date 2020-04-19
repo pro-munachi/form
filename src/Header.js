@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Memeheader = styled.div `
-    background-color: #282c34;
+    background: #282c34;
     min-height: 30vh;
     display: flex;
     flex-direction: column;

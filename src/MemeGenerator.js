@@ -3,7 +3,7 @@ import styled from  'styled-components'
 
 const Wrapper = styled.div `
 margin: 0;
-background: #7FDBFF;
+background: url(https://images.unsplash.com/photo-1545911678-09d0843ccef1?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60);
 `
 
 const Para = styled.input `
